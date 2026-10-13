@@ -38,9 +38,10 @@ public abstract class TaiLieu {
     public void setSoBanPhatHanh(int soBanPhatHanh) {
         this.soBanPhatHanh = soBanPhatHanh;
     }
+
     public void Nhap(Scanner sc) {
         System.out.print("Nhap ten nha xuat ban: ");
-        setTenNXB(sc.nextLine());
+        setTenNXB(sc.nextLine().trim());
 
         System.out.print("Nhap so ban phat hanh: ");
         setSoBanPhatHanh(Integer.parseInt(sc.nextLine().trim()));
@@ -50,8 +51,11 @@ public abstract class TaiLieu {
 
     public abstract String getChiTiet();
 
+    /** Chuoi ghi vao file txt: LOAI|ma|nxb|soBan|...thuoc tinh rieng */
+    public abstract String toFileString();
+
     public void Hien() {
-                System.out.printf("| %-8s | %-6s | %-16s | %6d | %-26s |%n",
+        System.out.printf("| %-8s | %-6s | %-16s | %6d | %-26s |%n",
                 getLoai(), getMaTaiLieu(), getTenNXB(), getSoBanPhatHanh(), getChiTiet());
     }
 }
