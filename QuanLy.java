@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class QuanLy {
 
-    private static final String FILE_DATA = "tailieu.txt";
+    private static final String FILE_DATA = "Tailieu.txt";
 
     private final List<TaiLieu> dsTaiLieu = new ArrayList<>();
 
