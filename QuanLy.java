@@ -134,10 +134,14 @@ public class QuanLy {
         System.out.println("Da xoa tai lieu " + ma);
     }
 
+        private static final String VIEN =
+            "+----------+--------+------------------+--------+------------------------------+";
+
     private void inTieuDe() {
-        System.out.printf("| %-8s | %-6s | %-16s | %6s | %-26s |%n",
+        System.out.println(VIEN);
+        System.out.printf("| %-8s | %-6s | %-16s | %6s | %-28s |%n",
                 "Loai", "Ma", "Nha xuat ban", "So ban", "Chi tiet");
-        System.out.println("|----------|--------|------------------|--------|----------------------------|");
+        System.out.println(VIEN);
     }
 
     public void hienTatCa() {
@@ -185,52 +189,5 @@ public class QuanLy {
         if (!coKetQua) {
             System.out.println("Khong co tai lieu thuoc loai nay.");
         }
-    }
-
-    // ====================== MAIN ======================
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        QuanLy ql = new QuanLy();
-        ql.docFile();
-
-        int chon;
-        do {
-            System.out.println("\n========== QUAN LY THU VIEN ==========");
-            System.out.println("1. Them moi tai lieu (Sach/Tap chi/Bao)");
-            System.out.println("2. Xoa tai lieu theo ma");
-            System.out.println("3. Hien thi thong tin tai lieu");
-            System.out.println("4. Tim kiem tai lieu theo loai");
-            System.out.println("0. Thoat");
-            System.out.print("Chon chuc nang: ");
-
-            try {
-                chon = Integer.parseInt(sc.nextLine().trim());
-            } catch (NumberFormatException e) {
-                chon = -1;
-            }
-
-            switch (chon) {
-                case 1:
-                    ql.them(sc);
-                    break;
-                case 2:
-                    ql.xoa(sc);
-                    break;
-                case 3:
-                    ql.hienTatCa();
-                    break;
-                case 4:
-                    ql.timTheoLoai(sc);
-                    break;
-                case 0:
-                    ql.ghiFile();
-                    System.out.println("Tam biet!");
-                    break;
-                default:
-                    System.out.println("Lua chon khong hop le!");
-            }
-        } while (chon != 0);
-
-        sc.close();
-    }
+    } 
 }

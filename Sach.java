@@ -47,7 +47,7 @@ public class Sach extends TaiLieu {
 
     @Override
     public String getChiTiet() {
-        return "Tac gia: " + tenTacGia + ", so trang: " + soTrang;
+                return tenTacGia + " - " + soTrang + " trang";
     }
 
     @Override
