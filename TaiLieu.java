@@ -70,7 +70,7 @@ public abstract class TaiLieu {
     public abstract String toFileString();
 
     public void Hien() {
-        System.out.printf("| %-8s | %-6s | %-16s | %6d | %-26s |%n",
-                getLoai(), getMaTaiLieu(), getTenNXB(), getSoBanPhatHanh(), getChiTiet());
+            System.out.printf("| %-8s | %-6s | %-16s | %6d | %-28s |%n",
+            getLoai(), getMaTaiLieu(), getTenNXB(), getSoBanPhatHanh(), getChiTiet());
     }
 }
