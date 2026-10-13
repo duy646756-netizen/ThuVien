@@ -39,12 +39,27 @@ public abstract class TaiLieu {
         this.soBanPhatHanh = soBanPhatHanh;
     }
 
+    protected static int nhapSoNguyen(Scanner sc, String loiNhap,
+                                      int giaTriNhoNhat, int giaTriLonNhat) {
+        while (true) {
+            System.out.print(loiNhap);
+            try {
+                int giaTri = Integer.parseInt(sc.nextLine().trim());
+                if (giaTri >= giaTriNhoNhat && giaTri <= giaTriLonNhat) {
+                    return giaTri;
+                }
+            } catch (NumberFormatException e) {
+                // Yeu cau nhap lai neu gia tri khong phai so nguyen.
+            }
+            System.out.println("Gia tri khong hop le. Vui long nhap lai.");
+        }
+    }
+
     public void Nhap(Scanner sc) {
         System.out.print("Nhap ten nha xuat ban: ");
         setTenNXB(sc.nextLine().trim());
 
-        System.out.print("Nhap so ban phat hanh: ");
-        setSoBanPhatHanh(Integer.parseInt(sc.nextLine().trim()));
+        setSoBanPhatHanh(nhapSoNguyen(sc, "Nhap so ban phat hanh: ", 1, Integer.MAX_VALUE));
     }
 
     public abstract String getLoai();
