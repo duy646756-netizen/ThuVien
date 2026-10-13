@@ -56,7 +56,7 @@ public class Bao extends TaiLieu {
 
     @Override
     public String getChiTiet() {
-        return "Ngay phat hanh: " + ngayPhatHanh;
+                return "Ngay " + ngayPhatHanh;
     }
 
     @Override

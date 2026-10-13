@@ -45,7 +45,7 @@ public class TapChi extends TaiLieu {
 
     @Override
     public String getChiTiet() {
-        return "So phat hanh: " + soPhatHanh + ", thang: " + thangPhatHanh;
+                return "So " + soPhatHanh + " - thang " + thangPhatHanh;
     }
 
     @Override
